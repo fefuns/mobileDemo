@@ -5,6 +5,7 @@
      * @param {Number} size 最终的位数
      * @returns {String}
      */
+
     prmt.addZeroPre = function (num, size) {
         var str;
 
@@ -18,3 +19,4 @@
     };
     window.prmt = prmt;
 })(window.prmt || {}, jQuery);
+
