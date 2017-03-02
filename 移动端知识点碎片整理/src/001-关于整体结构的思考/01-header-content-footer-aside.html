@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>侧滑菜单</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="minimal-ui,width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/00101.css">
+    <script>
+    /*rem单位适配*/
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+
+                    if (!clientWidth) return;
+                    var fz = 100 * (clientWidth / 750);
+                    fz = (fz > 100 ? 100 : fz);
+                    docEl.style.fontSize = fz + 'px';
+                    win._fz = fz;
+                };
+        if (!doc.addEventListener) return;
+        recalc();
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        window.recalc = recalc;
+    })(document, window);
+    </script>
+</head>
+<body>
+<header class="pg-header">
+    <div class="fl">
+        <i class="fa fa-user-circle-o"></i>
+    </div>
+    <h1 class="pg-title">
+        主标题
+    </h1>
+    <div class="fr">
+        <h3 class="pg-title-sub">添加</h3>
+        <i class="fa fa-plus-circle"></i>
+    </div>
+</header>
+<footer class="pg-footer">
+    footer
+</footer>
+<div class="pg-wrapper">
+    <div class="page">
+        <dl>
+            <dt>1. 为什么header，footer用absolute，而不用fixed定位？</dt>
+            <dd><p>在移动端，fixed定位滚动的时候bug太多，尤其是在有表单元素的时候慎用。</p></dd>
+            <dd>
+                前人总结的fixed定位的一些常见问题：<br>
+                <a href="http://efe.baidu.com/blog/mobile-fixed-layout/?qq-pf-to=pcqq.group">百度EFE团队：Web移动端Fixed布局的解决方案</a>
+                <br>
+                <a href="http://www.cnblogs.com/zhangdaiping/p/3170892.html">博客园炎燎：移动端web页面使用position:fixed问题总结</a>
+                <br>
+                <a href="http://www.cnblogs.com/yexiaochai/p/3561939.html">博客园叶小钗：【小贴士】虚拟键盘与fixed带给移动端的痛！</a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>2. 为什么采用兄弟选择符 ~ 控制 中间内容区的padding值？</dt>
+            <dd><p>如果不用兄弟选择器，直接单独设置中间内容区的padding。如果还是这个项目，进入到另一个文章页了，没有footer。那文章离下面总是有些空白。而用了兄弟选择器,试试把
+                <code>footer</code>删除，看看会不会有那种问题。</p></dd>
+            <dd>
+                补充资料：<br>
+                <a href="http://www.css88.com/book/css/selectors/relationship/e-brother-f.htm">兄弟选择符（E ~ F）的用法与浏览器兼容情况</a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>3.是否有其它方案实现这种布局？让内容区自动撑满除header,footer之外的地方</dt>
+            <dd>
+                <p>试试flex方式</p>
+            </dd>
+            <dd>
+                flex学习参考资料：<br>
+                <a href="http://www.css88.com/book/css/properties/flex/flex.htm">flex基本用法与兼容情况</a>
+                <a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool">阮一峰：Flex 布局教程：语法篇</a>
+                <a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html">Flex 布局教程：实例篇</a>
+                <a href="https://segmentfault.com/a/1190000002910324">flexbox详解</a><br>
+                <a href="https://segmentfault.com/a/1190000003978624">flex兼容写法</a>
+            </dd>
+        </dl>
+    </div>
+</div>
+</body>
+</html>
