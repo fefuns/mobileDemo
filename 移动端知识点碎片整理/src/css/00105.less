@@ -1,0 +1,104 @@
+.pg-header,
+.pg-footer,
+.pg-wrapper {
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+.pg-header,
+.pg-footer {
+	height: .8rem;
+	line-height: .8rem;
+	text-align: center;
+	background: #cccccc;
+	z-index: 900;
+}
+
+.pg-header {
+	top: 0;
+	padding: 0 .2rem;
+
+	.pg-title {
+		position: absolute;
+		left: .6rem;
+		right: .6rem;
+		line-height: .8rem;
+		font-size: .32rem;
+		font-weight: 500;
+		-ms-text-overflow: ellipsis;
+		text-overflow: ellipsis;
+	}
+
+	.pg-title-sub {
+		display: inline-block;
+	}
+}
+
+.pg-footer {
+	bottom: 0;
+}
+
+.pg-wrapper {
+	top: 0;
+	bottom: 0;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	max-width: 750px;
+	margin: 0 auto;
+}
+
+.pg-header ~ .pg-wrapper {
+	padding-top: .8rem;
+}
+
+.pg-footer ~ .pg-wrapper {
+	padding-bottom: .8rem;
+}
+
+
+.pg-footer {
+	padding: .1rem;
+
+	.msg {
+		display: block;
+		width: 100%;
+		height: .6rem;
+		border: 1px solid #ccc;
+		background: #ffffff;
+	}
+}
+
+
+/* 另外的一些与主题无关css */
+.pg-wrapper {
+	border-left: 1px solid #f0f0f0;
+	border-right: 1px solid #f0f0f0;
+}
+
+.page {
+
+	dl {
+		padding: .2rem;
+
+		dt {
+			font-size: .32rem;
+		}
+
+		p {
+			color: #999999;
+			margin-bottom: .2rem;
+		}
+
+	}
+
+
+
+	a {
+		color: #0a6cd6;
+
+		&:hover {
+			color: #ff6600;
+		}
+	}
+}
