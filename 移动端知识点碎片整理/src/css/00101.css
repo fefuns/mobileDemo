@@ -1,9 +1,9 @@
-header,
-footer,
-main {
+.header,
+.footer,
+.main {
   display: block;
 }
-header {
+.header {
   position: fixed;
   height: .8rem;
   left: 0;
@@ -11,7 +11,7 @@ header {
   top: 0;
   background: #009dda;
 }
-footer {
+.footer {
   position: fixed;
   height: .8rem;
   left: 0;
@@ -19,7 +19,7 @@ footer {
   bottom: 0;
   background: #009dda;
 }
-main {
+.main {
   min-width: 320px;
   max-width: 750px;
   margin: .8rem auto;

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>头尾fixed, 中间滚动的布局</title>
+    <title>思考如何用flex实现</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="minimal-ui,width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/00101.css">
+    <link rel="stylesheet" href="../css/00104.css">
     <script>
         /*rem单位适配*/
         (function (doc, win) {
@@ -33,13 +33,18 @@
         })(document, window);
     </script>
 </head>
-<body>
+<body class="layout-flex">
 <!--fixed 定位的头部-->
-<header class="header">
+<header class=header>
 
 </header>
 <!-- 可以滚动的区域 -->
 <main class="main">
+    <p>
+        这种方式更适合，因为考虑到同一个项目，可能首页有头尾，尾部有input框，但是到了内页，可能就只有header没有footer了。甚至有可能footer变了一个高度。
+        如果采用传统的方式，可能需要采用定义不同class的方式去针对不同情况写不同样式。或者是需要换一下结构位置，<a href="http://www.w3cplus.com/mobile/mobile-terminal-refactoring-mobile-layout.html">点击查看传统方式</a>。
+    </p>
+    <p>不过使用flex可能需要注意某些手机上微信与UC的兼容情况，所以还是要加上些兼容写法比较保险，可以使用<a href="http://www.cnblogs.com/aNd1coder/archive/2013/08/12/3252690.html">autoprefixer</a>来生成这些兼容样式</p>
     <ul>
         <li>1</li>
         <li>2</li>
@@ -144,7 +149,7 @@
 </main>
 <!-- fixed 定位的底部-->
 <footer class="footer">
-
+    <input type="text" class="msg">
 </footer>
 </body>
 </html>

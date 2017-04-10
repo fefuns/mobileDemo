@@ -35,12 +35,13 @@
 </head>
 <body>
 <!--fixed 定位的头部-->
-<header>
+<header class="header">
 
 </header>
 <!-- 可以滚动的区域 -->
-<main>
+<main class="main">
     <div class="content">
+        <p>为什么没有直接把main设成可滚动的<code>div</code>, 而是在里面另外加一层 <code>&lt;div class="content"&gt;</code> 因为在移动端，如果fixed定位节点后面紧跟着的兄弟节点是可滚动的，那么fixed节点会被其后的兄弟节点遮住</p>
         <ul>
             <li>1</li>
             <li>2</li>
@@ -145,7 +146,7 @@
     </div>
 </main>
 <!-- fixed 定位的底部-->
-<footer>
+<footer class="footer">
     <input type="text" class="msg">
 </footer>
 </body>
